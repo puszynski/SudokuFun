@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SudokuLibrary;
+using System;
 
 namespace SudokuConsoleDisplay
 {
@@ -6,7 +7,19 @@ namespace SudokuConsoleDisplay
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hi! Sudoku board is displey below");
+
+            var sudokuBuilder = new SudokuBoardBuilder();
+            sudokuBuilder.NewEmptyBoard();
+
+            var sudokuArray = sudokuBuilder.NewEmptyBoard();
+
+            DisplaySudokuArray(sudokuArray);
+        }
+
+        static void DisplaySudokuArray(int[,] arrayToDisplay)
+        {
+
         }
     }
 }
