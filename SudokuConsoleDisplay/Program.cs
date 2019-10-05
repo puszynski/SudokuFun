@@ -9,17 +9,21 @@ namespace SudokuConsoleDisplay
         {
             Console.WriteLine("Hi! Sudoku board is displey below");
 
-            var sudokuBuilder = new SudokuBoardBuilder();
-            sudokuBuilder.NewEmptyBoard();
-
-            var sudokuArray = sudokuBuilder.NewEmptyBoard();
+            var easyBuilder = new SudokuBoardEasyBuilder();
+            var director = new SudokuDirector(easyBuilder);
+            
+            var sudokuArray = director.GetResult();
 
             DisplaySudokuArray(sudokuArray);
+            Console.ReadLine();
         }
 
-        static void DisplaySudokuArray(int[,] arrayToDisplay)
+        static void DisplaySudokuArray(string[] arrayToDisplay)
         {
-
+            foreach (var line in arrayToDisplay)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }
